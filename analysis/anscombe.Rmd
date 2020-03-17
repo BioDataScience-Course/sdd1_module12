@@ -1,0 +1,70 @@
+---
+title: "Anscombe"
+author: '...'
+date: "3/17/2020"
+output: html_document
+---
+
+```{r setup}
+SciViews::R
+```
+
+# Objectif
+
+Ce document s'intéresse à la réalisation d'exercice sur l'association de deux variables.
+
+# Situation 
+
+Un jeu de données artificiel appelé “quartet d’Anscombe” montre très bien comment des données très différentes peuvent avoir même moyenne, même variance et même coefficient de corrélation. Ce n’est qu’avec un graphique en nuage de points (ou matrice de nuages de points, voir plus loin) qu’il est possible de détecter le problème.
+
+Ce jeu de données est brièvement traité dans la section : [Importance des graphiques](http://biodatascience-course.sciviews.org/sdd-umons/association-de-deux-variables.html#importance-des-graphiques).
+
+
+# Analyse
+
+> Importez le jeu de données anscombe du package `datasets` Complétez la fonction read ci-dessous
+
+```{r importation}
+ans <- read("...", package = "...")
+```
+
+> Réalisez un nuage de point de la variable y1 en fonction de x1. Commentez en une phrase le résultat de cette première fonction.
+
+```{r graph1}
+chart(...) +
+  geom_point()
+```
+
+> Réalisez un test de corrélation avec la méthode de Pearson et avec la méthode de spearman. Comparez les résultats obtenues.  Commentez en 4 phrases le résultat de ces fonctions (Quelle est la valeur des estimateurs ? Quelle est la valeur des p value ? Est ce que les p value sont identiques ?). 
+
+```{r cortest1}
+# test de corrélation Pearson
+cor.test(..., method = "pearson")
+# test de correlation de Spearman
+cor.test(..., method = "spearman")
+```
+
+
+> Réalisez un test de corrélation de la variable y1 ~ x1 et un test de corrélation de la variable y3 ~ x3 avec la méthode Pearson. Commentez en 4 phrases le résultat de ces fonctions (Quelle est la valeur des estimateurs ? Quelle est la valeur des p value ? Est ce que les p value sont identiques ?). 
+
+```{r cortest2}
+# cor.test() y1 ~ x1
+
+# cor.test() y3 ~ x3
+# 
+```
+
+> Réalisez un présente les nuage de points  de la variable y1 en fonction de x1 et la variable y3 en fonction de x3 avec la méthode Pearson. Commentez en 4 phrases le résultat de ces graphiques avec les résultat des tests de corrélation. 
+
+```{r graph2}
+a <- chart()
+
+b <- chart()
+
+combine_charts(list(a,b))
+```
+
+# Conclusion
+
+> Réalisez un petite conclusion de maximum 2 lignes sur les éléments importants que vous avez vu qans ce document.
+
